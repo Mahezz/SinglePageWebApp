@@ -12,6 +12,7 @@ export class HeroesService {
       img: "assets/img/aquaman.png",
       aparicion: "1941-11-01",
       casa:"DC"
+    
     },
     {
       nombre: "Batman",
@@ -71,10 +72,12 @@ export class HeroesService {
     let heroesArr:Heroe[] = []
     termino = termino.toLowerCase()
     
-    for (let heroe of this.heroes) {
+    for (let i = 0; i<this.heroes.length; i++) {
+      let heroe = this.heroes[i]
       let nombre = heroe.nombre.toLowerCase()
       if(nombre.indexOf(termino) >= 0){
-         heroesArr.push(heroe)
+        heroe.idx = i
+        heroesArr.push(heroe)
       }
     }
 
@@ -89,5 +92,5 @@ export interface Heroe{
   img:string,
   aparicion:string,
   casa:string
-
+  idx?:any
 }

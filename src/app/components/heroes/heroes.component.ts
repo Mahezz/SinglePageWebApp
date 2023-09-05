@@ -8,7 +8,6 @@ import { Heroe, HeroesService } from 'src/app/services/heroes.service';
   templateUrl: './heroes.component.html'
 })
 export class HeroesComponent implements OnInit {
-  
   heroes:Heroe[] = []
 
   constructor(private _heroesService: HeroesService,
